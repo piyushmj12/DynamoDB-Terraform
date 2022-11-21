@@ -1,6 +1,6 @@
 provider "aws" {
   region     = var.region1
-  shared_credentials_files = ["C:/Users/piyush_yogi/.aws/credentials"]
+  #shared_credentials_files = ["C:/Users/piyush_yogi/.aws/credentials"]
 }
 
 resource "aws_iam_role" "my_role" {
