@@ -1,6 +1,6 @@
 variable "region1" {
   description = "The AWS region we want this bucket to live in."
-  default     = "us-east-1"
+  default     = "ap-south-1"
 }
 
 variable "bucket" {
