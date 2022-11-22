@@ -127,9 +127,10 @@ resource "aws_lambda_permission" "allow_bucket" {
 
 
 
+
 provider "aws" {
-  alias  = "ap-south-1"  
-  region = "ap-south-1"
+  alias  = "us-east-1"  
+  region = "us-east-1"
 }
 
 provider "aws" {
@@ -137,8 +138,8 @@ provider "aws" {
   region = "us-west-2"
 }
 
-resource "aws_dynamodb_table" "ap-south-1" {
-  provider = aws.ap-south-1
+resource "aws_dynamodb_table" "us-east-1" {
+  provider = aws.us-east-1
 
   name           = "DynamoDB-Terraform"
   billing_mode   = "PROVISIONED"
@@ -187,21 +188,22 @@ resource "aws_dynamodb_table" "us-west-2" {
 
 resource "aws_dynamodb_global_table" "myTable" {
   depends_on = [
-    aws_dynamodb_table.ap-south-1,
+    aws_dynamodb_table.us-east-1,
     aws_dynamodb_table.us-west-2,
   ]
-  provider = aws.ap-south-1
+  provider = aws.us-east-1
 
   name = "DynamoDB-Terraform"
 
   replica {
-    region_name = "ap-south-1" 
+    region_name = "us-east-1" 
   }
 
   replica {
     region_name = "us-west-2"
 }
 }
+
 
 
 resource "aws_lambda_function" "terraform_lambda_func" {
