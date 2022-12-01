@@ -31,5 +31,5 @@ variable "dynamodbtable" {
 
 
 variable "accountid" {
-    description = "The account id no is."
+    description = "The account id in which lambda is created"
 }
