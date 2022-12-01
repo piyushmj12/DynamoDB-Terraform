@@ -32,5 +32,4 @@ variable "dynamodbtable" {
 
 variable "accountid" {
     description = "The account id no is."
-    default = "406210002387"
 }
