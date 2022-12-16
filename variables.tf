@@ -32,4 +32,5 @@ variable "dynamodbtable" {
 
 variable "accountid" {
     description = "The account id in which lambda is created"
+    default = "406210002387"
 }
